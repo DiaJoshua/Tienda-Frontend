@@ -10,7 +10,7 @@ const generateReferenceNumber = () => {
 //const stripe = require('stripe')(process.env.REACT_APP_CHECKOUT_SECRET_API_KEY);
 
 const PlaceOrder = async (req, res) => {
-  const frontend_url = 'http://localhost:3000';
+  const frontend_url = 'tienda-frontend-sandy.vercel.app';
 
   try {
     // Debugging: Print the Stripe key to verify it's being read correctly
