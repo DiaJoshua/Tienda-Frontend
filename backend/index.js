@@ -45,7 +45,9 @@ const sendEmail = async (to, subject, text) => {
   });
 };
 
-app.use(cors());
+app.use(cors({
+  origin: "tienda-frontend-sandy.vercel.app"
+}));
 app.use(express.json());
 app.use("/api/transactions", transactionRoutes);
 app.use("/api", productRoute);
@@ -111,7 +113,7 @@ app.use("/images", express.static("upload/images"));
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
-    image_url: `tienda-backend-gold.vercel.app/images/${req.file.filename}`,
+    image_url: `tienda-frontend-sandy.vercel.app/images/${req.file.filename}`,
   });
 });
 
