@@ -56,7 +56,7 @@ const LoginSignup = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/send-otp", {
+      const response = await fetch("tienda-backend-gold.vercel.app/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: formData.email }),
@@ -83,7 +83,7 @@ const LoginSignup = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/verify-otp", {
+      const response = await fetch("tienda-frontend-sandy.vercel.app/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -122,7 +122,7 @@ const LoginSignup = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/reset-password", {
+      const response = await fetch("tienda-frontend-sandy.vercel.app/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -154,7 +154,7 @@ const LoginSignup = () => {
       }
   
       try {
-        const response = await fetch('http://localhost:4000/forgot-password', {
+        const response = await fetch('tienda-frontend-sandy.vercel.app/forgot-password', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: emailForReset }),
@@ -199,7 +199,7 @@ const LoginSignup = () => {
       }
     
       try {
-        const response = await fetch('http://localhost:4000/login', {
+        const response = await fetch('tienda-frontend-sandy.vercel.app/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -234,7 +234,7 @@ const LoginSignup = () => {
 
     console.log("Signup Function Executed", formData);
     let responseData;
-    await fetch('http://localhost:4000/signup', {
+    await fetch('tienda-frontend-sandy.vercel.app/signup', {
       method:'POST',
       headers:{
         Accept:'application/json',
