@@ -46,7 +46,7 @@ const sendEmail = async (to, subject, text) => {
 };
 
 app.use(cors({
-  origin: "tienda-frontend-sandy.vercel.app"
+  origin: "https://tienda-frontend-sandy.vercel.app"
 }));
 app.use(express.json());
 app.use("/api/transactions", transactionRoutes);
