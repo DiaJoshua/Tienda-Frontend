@@ -57,7 +57,7 @@ export const PlaceOrder = () => {
      useEffect(() => {
       const fetchUserData = async () => {
         try {
-          const response = await axios.get("http://localhost:4000/api/users", {
+          const response = await axios.get("tienda-backend-gold.vercel.app/api/users", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -214,7 +214,7 @@ export const PlaceOrder = () => {
   // async function submitOrder(orderData) {
   //   try {
   //     const response = await axios.post(
-  //       `http://localhost:4000/api/orderedItems/`,
+  //       `tienda-backend-gold.vercel.app/api/orderedItems/`,
   //       orderData
   //     );
   //     console.log("Order created successfully:", response.data);
@@ -297,9 +297,9 @@ export const PlaceOrder = () => {
           }
         ],
         redirectUrl: {
-          success: `http://localhost:3000/myorders?orderId=${requestReferenceNumber}`,
-          failure: `http://localhost:3000/myorders?orderId=${requestReferenceNumber}`,
-          cancel: `http://localhost:3000/myorders?orderId=${requestReferenceNumber}`,
+          success: `tienda-frontend-sandy.vercel.app/myorders?orderId=${requestReferenceNumber}`,
+          failure: `tienda-frontend-sandy.vercel.app/myorders?orderId=${requestReferenceNumber}`,
+          cancel: `tienda-frontend-sandy.vercel.app/myorders?orderId=${requestReferenceNumber}`,
         },
       requestReferenceNumber,
       };
@@ -323,7 +323,7 @@ export const PlaceOrder = () => {
           const saveTransaction = async (transactionDetails) => {
             console.log("Saving Transaction Details:", transactionDetails); 
             try {
-              await axios.post('http://localhost:4000/api/transactions', transactionDetails);
+              await axios.post('tienda-backend-gold.vercel.app/api/transactions', transactionDetails);
               console.log("Transaction saved:", transactionDetails);
             } catch (error) {
               console.error("Error saving transaction:", error.response ? error.response.data : error.message);
@@ -350,7 +350,7 @@ export const PlaceOrder = () => {
                 size: item.size,
                 quantity: item.quantity
               }));
-              await axios.post('http://localhost:4000/api/updateStock', { updates: stockUpdates });
+              await axios.post('tienda-backend-gold.vercel.app/api/updateStock', { updates: stockUpdates });
               console.log("Stock updated successfully");
             } catch (error) {
               console.error("Error updating stock:", error.response ? error.response.data : error.message);
