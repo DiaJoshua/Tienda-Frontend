@@ -15,7 +15,7 @@ const getUserIdFromToken = () => {
 const updateTransactionStatus = async (transactionId, newStatus) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/transactions/updateTransactionStatus/${transactionId}`,
+      `tienda-backend-gold.vercel.app/api/transactions/updateTransactionStatus/${transactionId}`,
       {
         method: "POST",
         headers: {
@@ -91,7 +91,7 @@ const MyOrders = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/transactions/userTransactions/${userId}`
+          `tienda-backend-gold.vercel.app/api/transactions/userTransactions/${userId}`
         );
         console.log("Response Status:", response.status);
         console.log("Response Data:", response.data);
