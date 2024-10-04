@@ -41,13 +41,13 @@ const ShopContextProvider = (props) => {
 
 
   useEffect(() => {
-    fetch("http://localhost:4000/allproducts")
+    fetch("tienda-backend-gold.vercel.app/allproducts")
       .then((response) => response.json())
       .then((data) => setAll_Product(data));
 
     const authToken = localStorage.getItem("auth-token");
     if (authToken) {
-      fetch("http://localhost:4000/getcart", {
+      fetch("tienda-backend-gold.vercel.app/getcart", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -63,7 +63,7 @@ const ShopContextProvider = (props) => {
 
   const fetchAllProducts = async () => {
     try {
-      const response = await fetch("http://localhost:4000/allproducts");
+      const response = await fetch("tienda-backend-gold.vercel.app/allproducts");
       if (!response.ok) {
         throw new Error("Failed to fetch products");
       }
@@ -106,7 +106,7 @@ const ShopContextProvider = (props) => {
     }));
     const authToken = localStorage.getItem("auth-token");
     if (authToken) {
-      fetch("http://localhost:4000/addtocart", {
+      fetch("tienda-backend-gold.vercel.app/addtocart", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -154,7 +154,7 @@ const ShopContextProvider = (props) => {
     });
     const authToken = localStorage.getItem("auth-token");
     if (authToken) {
-      fetch("http://localhost:4000/removefromcart", {
+      fetch("tienda-backend-gold.vercel.app/removefromcart", {
         method: "POST",
         headers: {
           Accept: "application/json",
