@@ -8,7 +8,7 @@ const RelatedProducts = ({ category }) => {
   useEffect(() => {
     const fetchRelatedProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/relatedproducts/${category}`);
+        const response = await fetch(`tienda-backend-gold.vercel.app/relatedproducts/${category}`);
         if (response.ok) {
           const data = await response.json();
           setRelatedProducts(data);
