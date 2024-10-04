@@ -46,7 +46,7 @@ const Address = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem("authToken"); // Ensure you store and retrieve the token properly
-        const response = await axios.get("http://localhost:4000/api/users", {
+        const response = await axios.get("tienda-backend-gold.vercel.app/api/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
         // Assuming the response contains the user data, set it in state
@@ -186,7 +186,7 @@ const Address = () => {
   
         console.log("Form Data: ", formData); // <-- Debug form data
   
-        const response = await axios.patch('http://localhost:4000/api/edituser/address', {
+        const response = await axios.patch('tienda-backend-gold.vercel.app/api/edituser/address', {
           userId,
           addressData: formData
         });
