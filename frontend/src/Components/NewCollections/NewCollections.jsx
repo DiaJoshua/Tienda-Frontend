@@ -6,7 +6,7 @@ const NewCollections = () => {
   const [new_collection, setNew_Collection] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/newcollections')
+    fetch('tienda-backend-gold.vercel.app/newcollections')
       .then((response) => response.json())
       .then((data) => setNew_Collection(data.slice(0, 8))); 
   }, []);
