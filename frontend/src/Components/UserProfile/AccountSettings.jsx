@@ -29,7 +29,7 @@ const AccountSettings = () => {
     }
 
     console.log("authToken", authToken);
-    fetch("http://localhost:4000/api/users", {
+    fetch("tienda-backend-gold.vercel.app/api/users", {
       headers: {
         Authorization: `Bearer ${authToken}`,
       },
@@ -74,7 +74,7 @@ const AccountSettings = () => {
       setFormSubmitted(true);
       try {
         const response = await axios.patch(
-          `http://localhost:4000/api/edituser/${userId}`,
+          `tienda-backend-gold.vercel.app/api/edituser/${userId}`,
           { name: formData.name, email: formData.email, phone: formData.phone }
         );
         console.log("User updated successfully:", response.data);
