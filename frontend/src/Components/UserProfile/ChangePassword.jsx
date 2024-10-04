@@ -32,7 +32,7 @@ const ChangePassword = () => {
 
     try {
       const userResponse = await fetch(
-        `http://localhost:4000/fetchuser/${userId}`,
+        `tienda-backend-gold.vercel.app/fetchuser/${userId}`,
         {
           method: "GET",
           headers: {
@@ -52,7 +52,7 @@ const ChangePassword = () => {
       setNewPassword("");
       setConfirmPassword("");
       const updateResponse = await fetch(
-        `http://localhost:4000/updatepassword/${userId}`,
+        `tienda-backend-gold.vercel.app/updatepassword/${userId}`,
         {
           method: "POST",
           headers: {
